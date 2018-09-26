@@ -46,7 +46,7 @@ public class GreetingController {
     	return movies;
     }
     
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "https://damp-island-67326.herokuapp.com")
     @RequestMapping(value= "/movies/trending/{page}")
     public MoviesDTO getTrendingMovies( @PathVariable("page") int page) {
     	MoviesDTO movies = this.movieService.getTrendingMovies(page);
