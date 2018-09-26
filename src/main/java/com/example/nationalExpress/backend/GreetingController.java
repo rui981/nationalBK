@@ -32,14 +32,14 @@ public class GreetingController {
 	AuthService authService;
 	
 
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "https://nationalex.herokuapp.com")
     @RequestMapping(value= "/movie/{id}")
     public MovieDTO getMovieById(@PathVariable(value="id") int id) {
         MovieDTO movie = this.movieService.getMovie(id);
     	return movie;
     }
     
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "https://nationalex.herokuapp.com")
     @RequestMapping(value= "/movies/{searchText}/{page}")
     public MoviesDTO getMovies(@PathVariable(value= "searchText") String searchText, @PathVariable("page") int page) {
     	MoviesDTO movies = this.movieService.getMovies(searchText, page);
@@ -53,35 +53,35 @@ public class GreetingController {
     	return movies;
     }
     
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "https://nationalex.herokuapp.com")
     @RequestMapping(value= "/tv/{id}")
     public TvDTO getTvById(@PathVariable(value="id") int id) {
     	TvDTO tvShow = this.tvService.getTvShow(id);
     	return tvShow;
     }
     
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "https://nationalex.herokuapp.com")
     @RequestMapping(value= "/tvshows/{searchText}")
     public List<TvDTO> getTvShows(@PathVariable(value= "searchText") String searchText) {
         List<TvDTO> tvShows = this.tvService.getTvShows(searchText);
     	return tvShows;
     }
     
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "https://nationalex.herokuapp.com")
     @RequestMapping(value= "/tvshows/trending/{page}")
     public TvShowsDTO getTrendingTv(@PathVariable("page") int page) {
         TvShowsDTO tvShows = this.tvService.getTrendingTv(page);
     	return tvShows;
     }
     
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "https://nationalex.herokuapp.com")
     @RequestMapping(value= "/auth/rtoken")
     public Token getRtoken() {
         Token rToken = this.authService.getRequestToken();
         return rToken;
     }
     
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "https://nationalex.herokuapp.com")
     @RequestMapping(value= "/auth/sessionid/{requestToken}")
     public SessionDetails getSessionId(@PathVariable("requestToken") String requestToken) {
         SessionDetails sDetails = this.authService.getSessionId(requestToken);
